@@ -6,30 +6,7 @@
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     
-                                    <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-notifications"></i>
-                                        <span class="quantity"><?=count($notificacoes)?></span>
-                                        <div class="notifi-dropdown js-dropdown">
-                                            <div class="notifi__title">
-                                                <p>Você tem <?=count($notificacoes)?> <?=(count($notificacoes) > 1)? 'notificações' : 'notificação' ;?></p>
-                                            </div>
-                                            <?php foreach($notificacoes as $item):?>
-                                            <a href="<?=$base;?>/admin/notificacao/<?=$item['id'];?>" style="width:100%;"><div class="notifi__item">
-                                                <div class="bg-c1 img-cir img-40">
-                                                    <i class="fas fa-info-circle"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p><?=$item['mensagem'];?></p>
-                                                    <span class="date"><?=$item['data'];?></span>
-                                                </div>
-                                            </div></a>
-                                            <?php endforeach;?>
-                                            
-                                            <div class="notifi__footer">
-                                                <a href="<?=$base;?>/admin/notificacoes">Todas notificações</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
