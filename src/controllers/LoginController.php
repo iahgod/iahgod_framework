@@ -2,6 +2,7 @@
 namespace src\controllers;
 
 use \core\Controller;
+use \core\Mensagem;
 use \src\handlers\UserHandler;
 use \src\handlers\Fila_EmailHandler;
 use \src\Constant;
@@ -24,11 +25,11 @@ class LoginController extends Controller {
                 $_SESSION['token'] = $token;
                 $this->redirect('/admin');
             } else {
-                $this->mensagem('E-mail e/ou senha não conferem!', 'erro');
+                Mensagem::erro('E-mail e/ou senha não conferem!');
                 $this->redirect('/admin/login');
             }
         } else {
-            $this->mensagem('Informe todos os campos!', 'erro');
+            Mensagem::erro('Informe todos os campos!');
             $this->redirect('/admin/login');
         }
     }
@@ -50,7 +51,7 @@ class LoginController extends Controller {
 
         if($name && $email && $password) {
             if($password != $password2){
-                $this->mensagem('As senhas não conferem!', 'erro');
+                Mensagem::erro('As senhas não conferem!');
                 $this->redirect('/admin/cadastro');
             }
             if(UserHandler::emailExists($email) === false) {
@@ -58,12 +59,12 @@ class LoginController extends Controller {
                 $_SESSION['token'] = $token;
                 $this->redirect('/admin');
             } else {
-                $this->mensagem('E-mail já cadastrado!', 'erro');
+                Mensagem::erro('E-mail já cadastrado!');
                 $this->redirect('/admin/cadastro');
             }
 
         } else {
-            $this->mensagem('Informe todos os campos!', 'erro');
+            Mensagem::erro('Informe todos os campos!');
             $this->redirect('/admin/cadastro');
         }
     }
@@ -95,17 +96,16 @@ class LoginController extends Controller {
                 $to_body = $user['user']['nome'].', Segue a sua nova senha do sistema '.\src\Constant::TITULO_SITE.', sua nova senha é: '. $user['senha'];
 
                 Fila_EmailHandler::addFila($email, $user['user']['nome'], $email, $user['user']['nome'], 'Sua nova senha', $to_body);
-
-                $this->mensagem('E-mail enviado com uma nova senha', 'sucesso');
+                Mensagem::sucesso('E-mail enviado com uma nova senha!');
                 $this->redirect('/admin/login');
 
             }else{
-                $this->mensagem('Este e-mail não existe em nossa base de dados', 'erro');
+                Mensagem::erro('Este e-mail não existe em nossa base de dados!');
                 $this->redirect('/admin/esqueceu-senha');
             }
 
         } else {
-            $this->mensagem('Informe o e-mail', 'erro');
+            Mensagem::erro('Informe o e-mail!');
             $this->redirect('/admin/esqueceu-senha');
         }
     }
