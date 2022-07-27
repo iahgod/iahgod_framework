@@ -2,6 +2,7 @@
 namespace src\controllers;
 
 use \core\Controller;
+use \core\Mensagem;
 use \src\handlers\UserHandler;
 use \core\Mensagem;
 
