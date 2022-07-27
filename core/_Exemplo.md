@@ -1,3 +1,5 @@
+# CRUD DE EXEMPLO - COM ROTAS #
+as rotas deverão ir para o arquivo rotas
 ### Rotas
 
 ```php
