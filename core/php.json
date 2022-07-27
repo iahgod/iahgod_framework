@@ -20,7 +20,7 @@
 			"use \\core\\Mensagem;",
 			"use \\src\\models\\\\$1;",
 			"",
-			"class $1Controller extends Controller {",
+			"class ${TM_FILENAME} extends Controller {",
 			"",
 			"    private \\$loggedUser;",
 			"",

@@ -22,3 +22,8 @@ $router->post('/admin/minha-conta', 'UserController@contaUpdate');
 $router->get('/admin', 'AdminController@index');
 //NOTIFICACAO
 $router->get('/admin/notificacao/{id}', 'AdminController@viuNotificacao');
+$router->get('/admin/Teste/lista',       'TesteController@index');
+$router->get('/admin/Teste/form',        'TesteController@form');
+$router->get('/admin/Teste/form/{id}',   'TesteController@form');
+$router->post('/admin/Teste/form',       'TesteController@action');
+$router->get('/admin/Teste/delete/{id}', 'TesteController@delete');
