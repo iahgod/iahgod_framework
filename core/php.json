@@ -19,6 +19,9 @@
 			"use \\core\\Controller;",
 			"use \\core\\Mensagem;",
 			"use \\src\\models\\\\$1;",
+			"use \\src\\handlers\\UserHandler;",
+			"use \\src\\models\\Menu_Admin;",
+			"use \\src\\models\\Menu_Admin_Sub;",
 			"",
 			"class ${TM_FILENAME} extends Controller {",
 			"",
@@ -33,7 +36,8 @@
 			"",
 			"    public function index() {",
 			"        \\$this->render('$1/Lista', [",
-			"            'loggedUser' => \\$loggedUser",
+			"            'loggedUser' => $this->loggedUser,",
+		  	"            'menu' => $this->menu_admin(),",
 			"        ]);",
 			"    }",
 			"    public function form(\\$atts = []){",
@@ -149,5 +153,18 @@
 			"}"
 		],
 		"description": "controller"
-	}
+	},
+	"Model": {
+		"prefix": "mrModel",
+		"body": [
+		  "namespace src\\models;",
+		  "use \\core\\Model;",
+		  "",
+		  "class ${TM_FILENAME} extends Model {",
+		  "",
+		  "}"
+		],
+		"description": "Model"
+	},
+	
 }
