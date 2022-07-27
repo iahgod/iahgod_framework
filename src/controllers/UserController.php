@@ -4,6 +4,7 @@ namespace src\controllers;
 use \core\Controller;
 use \core\Mensagem;
 use \src\handlers\UserHandler;
+use \core\Mensagem;
 
 class UserController extends Controller {
 
@@ -49,6 +50,7 @@ class UserController extends Controller {
                 }
 
             }else{
+
                 Mensagem::erro('As senhas não conferem!');
                 $this->redirect('/admin/minha-conta');
 

@@ -5,6 +5,7 @@ use \core\Controller;
 use \src\handlers\UserHandler;
 use \src\handlers\PostHandler;
 use \src\models\Notificacao_Relacao;
+use \core\Mensagem;
 
 class AdminController extends Controller {
 

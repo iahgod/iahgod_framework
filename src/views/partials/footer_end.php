@@ -35,6 +35,16 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.colVis.min.js"></script>
 
+    <script src="<?=$base;?>/assets/ckeditor5/build/ckeditor.js"></script>
+    <script>ClassicEditor
+            .create( document.querySelector( '.editor' ), {
+                licenseKey: '',
+            } )
+            .then( editor => {
+                window.editor = editor;
+            } )
+    </script>
+
     <script src="<?=$base;?>/assets/tabela/tabelaGod.js"></script>
     
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -46,6 +56,7 @@
     </script>
     <script type="text/javascript" src="<?=$base;?>/assets/js/maskIahgod-2.js"></script>
     <script type="text/javascript" src="<?=$base;?>/assets/js/tableIahgod-4.js"></script>
+    <script type="text/javascript" src="<?=$base;?>/assets/js/sweetalert.js"></script>
 
 </body>
 

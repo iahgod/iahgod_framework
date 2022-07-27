@@ -5,6 +5,7 @@ use \core\Controller;
 use \core\Mensagem;
 use \src\handlers\UserHandler;
 use \src\handlers\Fila_EmailHandler;
+use \core\Mensagem;
 use \src\Constant;
 
 class LoginController extends Controller {
@@ -96,6 +97,7 @@ class LoginController extends Controller {
                 $to_body = $user['user']['nome'].', Segue a sua nova senha do sistema '.\src\Constant::TITULO_SITE.', sua nova senha é: '. $user['senha'];
 
                 Fila_EmailHandler::addFila($email, $user['user']['nome'], $email, $user['user']['nome'], 'Sua nova senha', $to_body);
+
                 Mensagem::sucesso('E-mail enviado com uma nova senha!');
                 $this->redirect('/admin/login');
 
