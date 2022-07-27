@@ -94,20 +94,6 @@ class Controller {
         return $flash;
     }
 
-    public function mensagem($mensagem, $tipo = null){
-        $classe = 'alert alert-primary';
-
-        if($tipo == 'sucesso'){
-            $classe = 'alert alert-success';
-        }
-        if($tipo == 'erro'){
-            $classe = 'alert alert-danger';
-        }
-
-        $_SESSION['flash'] = '<div class="'.$classe.'" role="alert">
-                    '.$mensagem.'
-                </div>';
-    }
     public function menu_admin(){
 
         $aMenu = Menu_Admin::select()->orderBy('ordem', 'asc')->where('ativo', 1)->get();

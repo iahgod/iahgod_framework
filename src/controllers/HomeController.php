@@ -3,7 +3,7 @@ namespace src\controllers;
 
 use \core\Controller;
 use \src\handlers\UserHandler;
-use \src\handlers\PostHandler;
+use \core\Mensagem;
 
 class HomeController extends Controller {
 

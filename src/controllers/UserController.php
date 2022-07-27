@@ -3,6 +3,7 @@ namespace src\controllers;
 
 use \core\Controller;
 use \src\handlers\UserHandler;
+use \core\Mensagem;
 
 class UserController extends Controller {
 
@@ -49,7 +50,7 @@ class UserController extends Controller {
 
             }else{
 
-                $this->mensagem('As senhas não conferem!', 'erro');
+                Mensagem::erro('As senhas não conferem!');
                 $this->redirect('/admin/minha-conta');
 
             }
@@ -85,7 +86,7 @@ class UserController extends Controller {
         
 
         UserHandler::update($aDado, $this->loggedUser->id);
-        $this->mensagem('Informações atualizadas com sucesso!', 'sucesso');
+        Mensagem::sucesso('Informações atualizadas com sucesso!');
         $this->redirect('/admin/minha-conta');
     }
 
